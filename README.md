@@ -10,5 +10,5 @@ Note: `Sam` is case-sensitive.
 
 # Branches
 
-1.  main        (development)
-2.  gh-pages    (production)
+1.  main    (development)
+2.  prod    (production)
