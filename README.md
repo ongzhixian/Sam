@@ -7,3 +7,8 @@ Simple asset management (using Angular)
 https://ongzhixian.github.io/Sam/
 
 Note: `Sam` is case-sensitive.
+
+# Branches
+
+1.  main        (development)
+2.  gh-pages    (production)
