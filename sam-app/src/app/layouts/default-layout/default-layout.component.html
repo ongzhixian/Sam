@@ -1,0 +1,43 @@
+<mat-toolbar>
+    <span>SAM</span>
+</mat-toolbar>
+<mat-sidenav-container class="sidenav-container" >
+    <mat-sidenav opened mode="side">
+        <mat-nav-list>
+            <div>
+                <a mat-list-item [routerLink]="'/dashboard'">Dashboard</a>
+                <a mat-list-item [routerLink]="'/products'">Products</a>
+                
+                <hr />
+                <div mat-list-item class="menu-header">Supply</div> 
+                <a mat-list-item [routerLink]="'/supplier/list'">Suppliers</a>
+                <a mat-list-item [routerLink]="'/supplier/purchase-order-list'">Purchase Orders</a>
+                <!--
+                <a mat-list-item [routerLink]="'/supplier'"> Supplier </a>
+                -->
+                
+                <hr/>
+                <div mat-list-item class="menu-header">Demand</div> 
+                <a mat-list-item [routerLink]="'/customer/list'">Customers</a>
+                <a mat-list-item [routerLink]="'/customer/sales-order-list'">Sales Orders</a>
+
+                <hr/>
+                <div mat-list-item class="menu-header">Company</div> 
+                <a mat-list-item [routerLink]="'/company/home'">Home</a>
+                <a mat-list-item [routerLink]="'/company/employees'">Employees</a>
+                <a mat-list-item [routerLink]="'/company/user-accounts'">User accounts</a>
+            </div>
+            <div>
+                <hr />
+                <!--
+                <a mat-list-item [routerLink]="'/login'">Login</a>
+                -->
+                <a mat-list-item [routerLink]="'/auth/logout'">Log out</a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <div class="page-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
+  

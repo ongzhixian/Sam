@@ -1,0 +1,16 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidenav {
+    width: 200px;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+
+.menu-header {
+    margin: 1em 1em .3em;
+    font-weight: bold;
+}

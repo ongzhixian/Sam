@@ -1,0 +1,9 @@
+<p>supplier-detail-page works!</p>
+<div *ngIf="supplier">
+    <h2>{{supplier.name | uppercase}} Details</h2>
+    <div>id: {{supplier.id}}</div>
+    <div>
+        <label for="hero-name">Hero name: </label>
+        <input id="hero-name" [(ngModel)]="supplier.name" placeholder="name">
+    </div>
+</div>

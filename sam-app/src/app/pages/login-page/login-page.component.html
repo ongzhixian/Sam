@@ -1,0 +1,46 @@
+<div class="col-3-grid">
+    <div></div>
+
+    <div>
+
+        <p>&nbsp;</p>
+        
+        <h2 style="margin-left: 1em;">Log in to SAM</h2>
+
+        <div class="col-2-grid">
+            <div >
+                <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)">
+                
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Email address</mat-label>
+                            <input type="text" matInput placeholder="your email address" formControlName="userName" required />
+                        </mat-form-field>
+                
+                    </div>
+                
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput placeholder="your password" formControlName="password" required />
+                        </mat-form-field>
+                    </div>
+                
+                    <div>
+                        <button mat-raised-button type="submit">Sign in</button>
+                    </div>
+                
+                </form>
+            </div>
+    
+            <div class="login-content">
+                <!-- 
+                    some content ({{ someData }})
+                -->
+            </div>
+        </div>
+
+    </div>
+
+    <div></div>
+</div>

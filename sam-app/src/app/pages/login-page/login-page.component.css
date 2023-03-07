@@ -1,0 +1,33 @@
+form {
+    margin: 1em;
+}
+
+.col-3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.col-2-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+.div1 { 
+    grid-column: 1 / 5;
+    
+} 
+
+.login-content {
+    margin: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
