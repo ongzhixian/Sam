@@ -7,7 +7,7 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Launch Edge against localhost",
+            "name": "Run sam-app (Edge)",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}/sam-app",
             "sourceMaps": true,

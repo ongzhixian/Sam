@@ -1,23 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.no-margin {
-    margin: 0;
-}
-
-.menu-spacer {
-    flex: 1 1 auto;
-}
-
-.page-content {
-    margin: 1em;
-}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.page-content { margin: 1em; }
+app-root, app-default-layout { display: block; height: 100%; }

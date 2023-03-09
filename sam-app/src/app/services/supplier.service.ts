@@ -1,9 +1,10 @@
 import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Supplier } from '../entities/supplier';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Supplier } from '../modules/supplier/entities/supplier';
+import { ConfigurationService } from './configuration.service';
 
 export const SUPPLIERS: Supplier[] = [
     { id: "12", name: 'Dr. Nice' },
@@ -22,7 +23,7 @@ export const SUPPLIERS: Supplier[] = [
 })
 export class SupplierService {
 
-    private suppliersApiUrl = 'http://localhost:7071/api/HttpExample2';
+    private suppliersApiUrl = `${this.config.getWarelogixBaseApiUrl()}supplier`;
 
     getSuppliers(): Observable<Supplier[]> {
         this.messageService.add('SupplierService: fetched suppliers');
@@ -39,6 +40,7 @@ export class SupplierService {
         // Error handling will be added in the next step of the tutorial.
         const supplier = SUPPLIERS.find(h => h.id === id)!;
         const url = `${this.suppliersApiUrl}/${id}`;
+        console.log("getSupplier", id);
         return this.http.get<Supplier>(url).pipe(
             tap(_ => this.log(`fetched supplier id=${id}`)),
             catchError(this.handleError<Supplier>(`getHero id=${id}`))
@@ -75,5 +77,7 @@ export class SupplierService {
 
     constructor(
         private http: HttpClient
-        , private messageService: MessageService) { }
+        , private messageService: MessageService
+        , private config: ConfigurationService
+        ) { }
 }

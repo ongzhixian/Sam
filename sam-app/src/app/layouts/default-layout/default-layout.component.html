@@ -1,5 +1,7 @@
 <mat-toolbar>
     <span>SAM</span>
+    &nbsp;
+    <!-- <mat-spinner [diameter]="16"></mat-spinner> -->
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container" >
     <mat-sidenav opened mode="side">
@@ -26,6 +28,10 @@
                 <a mat-list-item [routerLink]="'/company/home'">Home</a>
                 <a mat-list-item [routerLink]="'/company/employees'">Employees</a>
                 <a mat-list-item [routerLink]="'/company/user-accounts'">User accounts</a>
+
+                <hr/>
+                <div mat-list-item class="menu-header">Developer</div> 
+                <a mat-list-item [routerLink]="'/developer/dump'">Dump</a>
             </div>
             <div>
                 <hr />
