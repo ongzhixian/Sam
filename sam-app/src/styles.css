@@ -3,4 +3,6 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .page-content { margin: 1em; }
+.full-width { width: 100%; }
+.buttons-panel { display: flex; gap:1em; }
 app-root, app-default-layout { display: block; height: 100%; }

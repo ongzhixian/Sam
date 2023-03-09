@@ -1,0 +1,128 @@
+<div class="page-content">
+
+    <h2>Supplier registration</h2>
+
+    <!-- 
+    <form class="example-form">
+
+        <mat-form-field class="example-full-width">
+
+            <mat-label>Supplier company name</mat-label>
+            <input matInput placeholder="Company Pte Ltd" [formControl]="name">
+
+        </mat-form-field>
+
+        &nbsp;
+
+        <div class="buttons-panel">
+            <button mat-raised-button type="button" (click)="registerSupplier()">Register supplier</button>
+
+            <a mat-button color="accent" routerLink="/supplier/list">Supplier list</a>
+        </div>
+
+    </form> 
+    -->
+
+
+    <p>Form Status: {{ supplierForm.status }}</p>
+
+    <form [formGroup]="supplierForm">
+
+        <mat-form-field>
+            <mat-label>Supplier company name</mat-label>
+            <input matInput placeholder="Company Pte Ltd" formControlName="name">
+        </mat-form-field>
+
+        <div formArrayName="contactPersons">
+            <h2>Contact persons</h2>
+
+            <div class="buttons-panel">
+                <button mat-raised-button type="button" (click)="addContactPerson()">+ Add contact
+                    person</button>
+            </div>
+
+            &nbsp;
+
+            <div *ngFor="let contactPerson of contactPersons.controls; let contactPersonIndex = index"
+                [formGroupName]="contactPersonIndex">
+
+                <mat-card>
+                    <mat-card-content>
+
+                        <div>
+                            <mat-form-field>
+                                <mat-label>Job title</mat-label>
+                                <input matInput placeholder="Job title" formControlName="jobTitle">
+                            </mat-form-field>
+
+                            &nbsp;
+
+                            <mat-form-field>
+                                <mat-label>First name</mat-label>
+                                <input matInput placeholder="First name" formControlName="firstName">
+                            </mat-form-field>
+
+                            &nbsp;
+
+                            <mat-form-field>
+                                <mat-label>Last name</mat-label>
+                                <input matInput placeholder="Last name" formControlName="lastName">
+                            </mat-form-field>
+
+                            <button mat-icon-button aria-label="Delete contact"
+                                (click)="deleteContactPerson(contactPersonIndex)">
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </div>
+
+
+                        <div formArrayName="contactDetails">
+                            <h2>Contact details</h2>
+
+                            <div class="buttons-panel">
+                                <button mat-raised-button type="button" (click)="addContactDetail(contactPersonIndex)">+
+                                    Add contact detail</button>
+                            </div>
+
+                            &nbsp;
+
+                            <div *ngFor="let contactDetail of this.contactDetails(contactPersonIndex).controls; let contactDetailIndex = index"
+                                [formGroupName]="contactDetailIndex">
+
+                                <mat-form-field>
+                                    <mat-label>Contact type</mat-label>
+                                    <input matInput placeholder="Contact type" formControlName="contactType">
+                                </mat-form-field>
+                                &nbsp;
+                                <mat-form-field>
+                                    <mat-label>Contact Description</mat-label>
+                                    <input matInput placeholder="Contact description"
+                                        formControlName="contactDescription">
+                                </mat-form-field>
+                                &nbsp;
+                                <button mat-icon-button aria-label="Delete contact"
+                                    (click)="deleteContactDetail(contactPersonIndex, contactDetailIndex)">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </mat-card-content>
+
+                </mat-card>
+                
+                &nbsp;
+
+            </div>
+
+        </div>
+
+        <hr />
+
+    </form>
+
+    <button mat-raised-button type="button" (click)="testForm()">Test form</button>
+
+</div>

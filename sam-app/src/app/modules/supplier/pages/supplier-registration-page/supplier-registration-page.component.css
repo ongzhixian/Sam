@@ -1,0 +1,5 @@
+.xgrid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px;
+}

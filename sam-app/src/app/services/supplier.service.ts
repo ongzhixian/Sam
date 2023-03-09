@@ -50,6 +50,14 @@ export class SupplierService {
         // return of(supplier);
     }
 
+    registerSupplier(supplier: Supplier) : Observable<Supplier>  {
+
+        return this.http.post<Supplier>(this.suppliersApiUrl, supplier).pipe(
+            tap(_ => this.log(`Register new supplier`)),
+            catchError(this.handleError<Supplier>(`Supplier registration failed.`))
+        );
+    }
+
     /**
  * Handle Http operation that failed.
  * Let the app continue.
